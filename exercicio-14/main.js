@@ -33,8 +33,18 @@ const median = (...numbers) => {
         return orderedNumbers[middle]
     }
     const firstMedian = orderedNumbers[middle - 1]
-    const secondeMedian = orderedNumbers[middle]
-    return average(firstMedian, secondeMedian)
+    const secondMedian = orderedNumbers[middle]
+    return average(firstMedian, secondMedian)
 }
 
-console.log(`A função Mediana é: ${median(5, 10, 15, 20, 25)}`)
+console.log(`A função Mediana é: ${median(2, 7, 8, 10, 12)}`)
+
+const mode = (...numbers) => {
+    const quantities = numbers.map(num => [num,
+        numbers.filter(n => num === n).length
+    ])
+    quantities.sort((a, b) => b[1] - a[1])
+    return quantities[0][0]
+}
+
+console.log(`A função Moda é: ${mode(1, 2, 7, 5, 10, 44, 76, 3, 6, 9, 88, 0)}`)
