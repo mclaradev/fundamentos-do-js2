@@ -1,10 +1,5 @@
-function render() {
-    console.log("Renderizando a Interface da Aplicação...")
-}
-
-function store() {
-    console.log('Salvando as informações do Banco de Dados...')
-}
+const render = require("./render")
+const store = require("./store")
 
 console.log('Aplicação Iniciada.')
 render()
