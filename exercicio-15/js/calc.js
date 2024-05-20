@@ -1,9 +1,10 @@
-import calculate from "./calculate.js"
+import calculate from "./calculate.js";
+import copyToClipBoard from "./copyToClipBoard.js";
 
 const main = document.querySelector("main");
 const root = document.querySelector(":root");
-const input = document.getElementById("input");
 const resultInput = document.getElementById("result");
+const input = document.getElementById("input");
 const allowedkeys = [
   "(",
   ")",
@@ -27,18 +28,18 @@ const allowedkeys = [
 ];
 
 document.querySelectorAll(".charKey").forEach(function (charKeyBtn) {
-  charKeyBtn.addEventListener('click', function () {
+  charKeyBtn.addEventListener("click", function () {
     const value = charKeyBtn.dataset.value;
     input.value += value;
   });
 });
 
-document.getElementById("clear").addEventListener('click', function () {
+document.getElementById("clear").addEventListener("click", function () {
   input.value = "";
   input.focus();
 });
 
-input.addEventListener('keydown', function (ev) {
+input.addEventListener("keydown", function (ev) {
   ev.preventDefault();
   if (allowedkeys.includes(ev.key)) {
     input.value += ev.key;
@@ -52,23 +53,11 @@ input.addEventListener('keydown', function (ev) {
   }
 });
 
-document.getElementById("equal").addEventListener('click', calculate);
+document.getElementById("equal").addEventListener("click", calculate);
 
-document
-  .getElementById("copyToClipboard")
-  .addEventListener('click', function (ev) {
-    const button = ev.currentTarget;
-    if (button.innerText === "Copy") {
-      button.innerText = "Copied!";
-      button.classList.add("sucess!");
-      navigator.clipboard.writeText(resultInput.value);
-    } else {
-      button.innerText = "Copy";
-      button.classList.remove("sucess");
-    }
-  });
+document.getElementById("copyToClipboard").addEventListener("click", copyToClipBoard)
 
-document.getElementById("themeSwitcher").addEventListener('click', function () {
+document.getElementById("themeSwitcher").addEventListener("click", function () {
   if (main.dataset.theme === "dark") {
     root.style.setProperty("--bg-color", "#f1f5f9");
     root.style.setProperty("--border-color", "#aaa");
