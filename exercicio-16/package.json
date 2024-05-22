@@ -1,0 +1,14 @@
+{
+  "name": "exercicio-16-obc-dayjs",
+  "version": "1.0.0",
+  "description": "exercicio para botar em prática conhecimentos do npm",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "flora",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.11.11"
+  }
+}
