@@ -8,9 +8,16 @@ const book = {
     tags: ["Ficção Juvenil", "Humor"],
     author: {
         name: "Jeff Kinney"
+    },
+    addOnStock(quantity) {
+        this.inStock += quantity
     }
 }
 
 console.log(book)
 
-console.log(book.pagers)
+book.addOnStock(700)
+
+console.log(book.inStock)
+
+console.log(book)
