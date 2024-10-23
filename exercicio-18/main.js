@@ -30,7 +30,7 @@ class Product {
     calculateDiscount(normalPrice) {
         const discount = (this.price * normalPrice) / 100
         const finalPrice = this.price - discount
-        console.log(`Esse produto custa ${price} mas com desconto ele fica ${finalPrice}`)
+        console.log(`Esse produto custa ${this.price} mas com desconto ele fica ${finalPrice}`)
 
     }
 }
@@ -39,3 +39,8 @@ const user = new User("Maria Clara", "mclaradev@gmail.com", "mavi")
 
 user.login('mclaradev@gmail.com', 'mavi')
 user.login('mclaradev@gmail.com', 'maviis')
+
+const product = new Product("bike", "bike krw aro 29 quadro 15.5 Alumínio 24 vel Freio a Disco X32", 947, 5)
+
+product.addInStock(25)
+product.calculateDiscount(10)
