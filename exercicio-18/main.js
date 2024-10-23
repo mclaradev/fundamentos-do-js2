@@ -14,7 +14,28 @@ class User {
     }
 }
 
-const user = new User("Maria Clara", "mclaradev@gmail.com", "mvmc2810")
+class Product {
+    constructor(name, description, price, inStock){
+        this.name = name
+        this.description = description
+        this.price = price
+        this.inStock = inStock
+    }
 
-user.login('mclaradev@gmail.com', 'mvmc2810')
-user.login('mclaradev@gmail.com', 'mcmv2810')
+    addInStock(quantidade) {
+        this.inStock += quantidade
+        console.log(`Foram adicionadas mais ${quantidade} unidades deste produto. Estoque atual: ${this.inStock}`)
+    }
+
+    calculateDiscount(normalPrice) {
+        const discount = (this.price * normalPrice) / 100
+        const finalPrice = this.price - discount
+        console.log(`Esse produto custa ${price} mas com desconto ele fica ${finalPrice}`)
+
+    }
+}
+
+const user = new User("Maria Clara", "mclaradev@gmail.com", "mavi")
+
+user.login('mclaradev@gmail.com', 'mavi')
+user.login('mclaradev@gmail.com', 'maviis')
