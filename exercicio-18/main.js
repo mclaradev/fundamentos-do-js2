@@ -17,3 +17,4 @@ class User {
 const user = new User("Maria Clara", "mclaradev@gmail.com", "mvmc2810")
 
 user.login('mclaradev@gmail.com', 'mvmc2810')
+user.login('mclaradev@gmail.com', 'mcmv2810')
